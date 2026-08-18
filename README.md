@@ -221,19 +221,43 @@ The helper refuses incomplete or ambiguous task state and preserves the task as 
 
 The workspace currently has no active task. See [`STATUS.md`](STATUS.md) for the machine-readable status and [`INDEX.md`](INDEX.md) for the completed-task archive.
 
-## ICM Next Phase 1 pilot
+## ICM Next Phase 1
 
-`tools/icm-next.ps1` is an opt-in, local-only event-ledger pilot. It runs beside
-the v2 filesystem workflow and does not modify legacy tasks or archives. It adds
-generated state/context, dependency checks, artifact observations, human approval
-gates, recovery, archive snapshots, and legacy inventory/import. Start with:
+ICM Next is the new, local-first way to run a task. It keeps an append-only
+record of task events and generates the dashboard, task context, and recovery
+views from that record. Use it for a new pilot task; keep using the v2 workflow
+for in-flight legacy tasks. Do not use both workflows as the source of truth for
+the same task.
+
+ICM Next is already initialized in this workspace. For a new task:
 
 ```powershell
-.\tools\icm-next.ps1 init
+.\tools\icm-next.ps1 new-task -Title "Example task" -TaskId "example-task"
+.\tools\icm-next.ps1 transition -TaskId "example-task" -To active
 ```
 
+During the task, use `observe` to record the actual delivered file and
+`record` to capture completed checks or decisions. A task cannot close while a
+dependency remains open, its declared artifact is missing or changed, required
+checks are not current, or its approval gate is unmet. If a closed artifact
+changes, use `reopen`; ICM Next requires fresh observation and review before it
+can close again.
+
+Useful everyday commands:
+
+```powershell
+.\tools\icm-next.ps1 dashboard
+.\tools\icm-next.ps1 compile -TaskId "example-task"
+.\tools\icm-next.ps1 verify
+```
+
+Use `snapshot` to make a verified closeout export without moving task source
+files. Use `recover` to rebuild generated views rather than editing them by
+hand. ICM Next is local-only in Phase 1 and does not alter legacy tasks or
+archives.
+
 See [`redesign/PHASE_1_OPERATING_GUIDE.md`](redesign/PHASE_1_OPERATING_GUIDE.md)
-for commands and pilot boundaries.
+for the full command reference, approval rules, and pilot boundaries.
 
 ## Related documentation
 
