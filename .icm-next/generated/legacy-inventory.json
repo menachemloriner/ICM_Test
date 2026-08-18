@@ -1,0 +1,55 @@
+{
+  "schema": "icm-next-legacy-inventory/v1",
+  "generated_at": "2026-08-18T04:53:44.4499641Z",
+  "records": [
+    {
+      "import_task_id": "legacy-2026-08-08-tech-stack-comparison-tool",
+      "title": "2026-08-08_tech-stack-comparison-tool",
+      "legacy_path": "archive/completed-tasks/2026-08-08_tech-stack-comparison-tool",
+      "fingerprint": "73081e378e56def79260ed6caa0454e5ecf30a2cacb16a98c4dc03e383748127",
+      "workflow_manifest_exists": false,
+      "archive_record_exists": false,
+      "status_stage": null,
+      "pipeline_stage": null,
+      "stage_disagreement": false,
+      "declared_deliverables": [],
+      "missing_declared_deliverables": [],
+      "review_mentions_missing_artifacts": [
+        "tech-stack-comparison.html"
+      ],
+      "evidence_status": "legacy-claim-unverified"
+    },
+    {
+      "import_task_id": "legacy-2026-08-13-local-model-compatibility-for-icm",
+      "title": "Local Model Compatibility for ICM",
+      "legacy_path": "archive/completed-tasks/2026-08-13_local-model-compatibility-for-icm",
+      "fingerprint": "c15502030397b3463f00185c16d481e49f5bf5bb8d5463248cb50d7bfb062a04",
+      "workflow_manifest_exists": false,
+      "archive_record_exists": false,
+      "status_stage": "04_deliver_archive",
+      "pipeline_stage": "03_review",
+      "stage_disagreement": true,
+      "declared_deliverables": [
+        "deliverables/local-model-compatibility-report.md"
+      ],
+      "missing_declared_deliverables": [],
+      "review_mentions_missing_artifacts": [],
+      "evidence_status": "legacy-claim-unverified"
+    },
+    {
+      "import_task_id": "legacy-2026-08-13-startup-opportunity-discovery",
+      "title": "2026-08-13_startup-opportunity-discovery",
+      "legacy_path": "archive/completed-tasks/2026-08-13_startup-opportunity-discovery",
+      "fingerprint": "59a9f0dd0bed98d0bcaa95879c49143bf85433b71e41047665425441a7138022",
+      "workflow_manifest_exists": false,
+      "archive_record_exists": true,
+      "status_stage": null,
+      "pipeline_stage": null,
+      "stage_disagreement": false,
+      "declared_deliverables": [],
+      "missing_declared_deliverables": [],
+      "review_mentions_missing_artifacts": [],
+      "evidence_status": "legacy-claim-unverified"
+    }
+  ]
+}

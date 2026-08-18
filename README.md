@@ -221,10 +221,25 @@ The helper refuses incomplete or ambiguous task state and preserves the task as 
 
 The workspace currently has no active task. See [`STATUS.md`](STATUS.md) for the machine-readable status and [`INDEX.md`](INDEX.md) for the completed-task archive.
 
+## ICM Next Phase 1 pilot
+
+`tools/icm-next.ps1` is an opt-in, local-only event-ledger pilot. It runs beside
+the v2 filesystem workflow and does not modify legacy tasks or archives. It adds
+generated state/context, dependency checks, artifact observations, human approval
+gates, recovery, archive snapshots, and legacy inventory/import. Start with:
+
+```powershell
+.\tools\icm-next.ps1 init
+```
+
+See [`redesign/PHASE_1_OPERATING_GUIDE.md`](redesign/PHASE_1_OPERATING_GUIDE.md)
+for commands and pilot boundaries.
+
 ## Related documentation
 
 - [`WORKSPACE_PROTOCOL.md`](WORKSPACE_PROTOCOL.md) - full operating rules and context policy
 - [`STATUS.md`](STATUS.md) - current workspace state
 - [`system/default-workflow-v2/WORKFLOW.md`](system/default-workflow-v2/WORKFLOW.md) - reusable workflow definition
 - [`tools/README.md`](tools/README.md) - helper overview
+- [`redesign/PHASE_1_OPERATING_GUIDE.md`](redesign/PHASE_1_OPERATING_GUIDE.md) - ICM Next pilot guide
 - [`INDEX.md`](INDEX.md) - archive index

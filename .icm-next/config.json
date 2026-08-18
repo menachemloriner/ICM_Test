@@ -1,0 +1,15 @@
+{
+  "schema": "icm-next-config/v1",
+  "mode": "single_machine_trusted",
+  "external_storage": "disabled",
+  "artifact_change_policy": "reopen_and_review",
+  "git_checkpoints": "recommended_not_required",
+  "schema_owner": "workspace_owner",
+  "approval_kinds": [
+    "external_communication",
+    "production_deployment",
+    "financial",
+    "legal",
+    "destructive_change"
+  ]
+}

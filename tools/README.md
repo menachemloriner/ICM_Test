@@ -15,4 +15,9 @@ then moves a completed task as one self-contained directory into the archive. It
 does not substitute for substantive review; those checks and evidence belong in
 the task's `STATUS.md`, review record, or declared work product.
 
+`icm-next.ps1` is the opt-in ICM Next Phase 1 pilot. It stores task facts in a
+local append-only ledger and generates state/context views, approval gates,
+recovery reports, non-destructive snapshots, and a legacy archive inventory.
+See `redesign/PHASE_1_OPERATING_GUIDE.md` for the operating model.
+
 The helper uses the current date and refuses to overwrite an existing task directory.
